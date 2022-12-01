@@ -4,8 +4,8 @@ import world.points.Point;
 import world.squares.Square;
 
 public class Area extends Square {
-    protected double audibility;
-    protected double visibility;
+    protected final double audibility;
+    protected final double visibility;
 
     public Area(String name, Point bottomLeftPoint, Point topRightPoint) {
         this(name, bottomLeftPoint, topRightPoint, 1.0, 1.0);

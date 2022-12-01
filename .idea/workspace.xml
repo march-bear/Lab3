@@ -4,33 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="Init commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab3Prog.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/World.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/Sound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/SoundType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Condition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/CreatureType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMakeSound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Penguin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/ActiveCreature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/squares/Area.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/squares/Label.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/world/squares/Square.java" afterDir="false" />
+    <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/world/WorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Area.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +52,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ivan/IdeaProjects/untitled&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ivan/IdeaProjects/Lab6Inf&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,6 +60,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Lab3Prog" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -88,11 +90,33 @@
       <workItem from="1669126401217" duration="1211000" />
       <workItem from="1669191120649" duration="17000" />
       <workItem from="1669380889303" duration="175000" />
+      <workItem from="1669381078443" duration="6378000" />
+      <workItem from="1669471671162" duration="1074000" />
+      <workItem from="1669636342808" duration="16000" />
+      <workItem from="1669818861759" duration="2116000" />
+      <workItem from="1669821150180" duration="5674000" />
+      <workItem from="1669872359197" duration="1188000" />
+      <workItem from="1669873916913" duration="180000" />
+      <workItem from="1669874157685" duration="11000" />
+      <workItem from="1669876840281" duration="3857000" />
+      <workItem from="1669882612406" duration="1747000" />
     </task>
+    <task id="LOCAL-00001" summary="Init commit">
+      <created>1669381171790</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669381171790</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

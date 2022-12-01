@@ -11,7 +11,7 @@ public abstract class Creature extends Locateable implements IMove, IMakeSound {
     }
 
     public Creature(String name, Square square, int speed) {
-        this(randomXY(), randomXY(), name, square, speed);
+        this(randomX(square), randomY(square), name, square, speed);
     }
 
     public Creature(int x, int y, String name, Square square, int speed) {

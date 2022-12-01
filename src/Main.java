@@ -1,5 +1,24 @@
+import world.World;
+import world.points.locateables.creatures.Penguin;
+import world.points.locateables.creatures.active.Human;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        World world = World.getInstance();
+
+        world.setGroupOfPeople(
+                new Human("Лейк"),
+                new Human("Рассказчик"),
+                new Human("Карл")
+        );
+
+        world.setGroupOfPenguins(
+                new Penguin("Круглан", world.finish),
+                new Penguin("Рыбак", world.finish),
+                new Penguin("Коко", world.finish),
+                new Penguin("Тулупчик", world.finish)
+        );
+
+        world.run();
     }
 }

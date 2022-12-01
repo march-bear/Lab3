@@ -1,17 +1,24 @@
 package world.points;
 
+import world.squares.Square;
+
 public class Point {
     protected int x;
     protected int y;
-    public final static int maxXY = 50;
+    protected String name;
+    public final static int maxXY = 25;
     public Point() {
-        this.x = randomXY();
-        this.y = randomXY();
+        this(randomXY(), randomXY());
     }
 
     public Point(int x, int y) {
+        this(x, y, "");
+    }
+
+    public Point(int x, int y, String name) {
         this.x = x;
         this.y = y;
+        this.name = name;
     }
 
     public int getX() {
@@ -22,17 +29,8 @@ public class Point {
         return y;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public void setCoordinates(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public String getName() {
+        return name;
     }
 
     public void printCoordinates() {
@@ -41,5 +39,15 @@ public class Point {
 
     public static int randomXY() {
         return (int) (Math.random() * (maxXY + 1));
+    }
+
+    public static int randomX(Square square) {
+        return (int) (Math.random() * (square.getTopRightPoint().getX() -
+                square.getBottomLeftPoint().getX() + 1) + square.getBottomLeftPoint().getX());
+    }
+
+    public static int randomY(Square square) {
+        return (int) (Math.random() * (square.getTopRightPoint().getY() -
+                square.getBottomLeftPoint().getY() + 1) + square.getBottomLeftPoint().getY());
     }
 }

@@ -10,7 +10,7 @@ public final class GroupOfCreatures<T> extends Locateable {
     final private CreatureType type;
 
     public GroupOfCreatures(String name, Square square, CreatureType type) {
-        this((int) (Math.random() * (maxXY + 1)), (int) (Math.random() * (maxXY + 1)), name, square, type);
+        this(randomX(square), randomY(square), name, square, type);
     }
 
     public GroupOfCreatures(int x, int y, String name, Square square, CreatureType type) {

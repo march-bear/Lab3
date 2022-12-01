@@ -7,7 +7,10 @@ import world.squares.Label;
 import world.squares.MainlandAntarctica;
 
 public final class Human extends ActiveCreature {
-    Human(String name, int x, int y) {
+    public Human(String name) {
+        this(name, 0, 0);
+    }
+    public Human(String name, int x, int y) {
         super(100, name, MainlandAntarctica.getInstance(), 10, x, y, 2);
     }
 

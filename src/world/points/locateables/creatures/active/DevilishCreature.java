@@ -16,9 +16,12 @@ public class DevilishCreature extends ActiveCreature {
         this.senseOfSmell = senseOfSmell;
     }
 
+    public DevilishCreature(String name, Square square, double bloodlust, int senseOfSmell) {
+        this(name, square, randomX(square), randomY(square), bloodlust, senseOfSmell);
+    }
+
     public DevilishCreature(String name, Square square) {
-        this(name, square, (int) (Math.random() * square.bottomLeftPoint.getX()),
-                (int) (Math.random() * square.bottomLeftPoint.getY()), 0.5, 1);
+        this(name, square, 0.5, 1);
     }
 
     @Override
