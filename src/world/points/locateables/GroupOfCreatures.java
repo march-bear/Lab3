@@ -7,20 +7,14 @@ import java.util.ArrayList;
 
 public final class GroupOfCreatures<T> extends Locateable {
     final private ArrayList<T> creatures;
-    final private CreatureType type;
 
-    public GroupOfCreatures(String name, Square square, CreatureType type) {
-        this(randomX(square), randomY(square), name, square, type);
+    public GroupOfCreatures(String name, Square square) {
+        this(randomX(square), randomY(square), name, square);
     }
 
-    public GroupOfCreatures(int x, int y, String name, Square square, CreatureType type) {
+    public GroupOfCreatures(int x, int y, String name, Square square) {
         super(x, y, name, square);
-        this.type = type;
         creatures = new ArrayList<T>();
-    }
-
-    public CreatureType getType() {
-        return type;
     }
 
     public void addCreature(T creature) {

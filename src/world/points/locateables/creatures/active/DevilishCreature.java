@@ -1,5 +1,7 @@
 package world.points.locateables.creatures.active;
 
+import world.Correctors;
+import world.points.Point;
 import world.points.locateables.SoundType;
 import world.points.locateables.Sound;
 import world.points.locateables.creatures.Creature;
@@ -12,8 +14,9 @@ public class DevilishCreature extends ActiveCreature {
 
     public DevilishCreature(String name, Square square, int x, int y, double bloodlust, int senseOfSmell) {
         super(45, name, square, (int) (Math.random() * 2 + 1), x, y, 1);
-        this.bloodlust = bloodlust;
-        this.senseOfSmell = senseOfSmell;
+
+        this.bloodlust = Correctors.correctDouble(bloodlust, 0.0, 1.0);
+        this.senseOfSmell = Correctors.correctInt(senseOfSmell, 0, maxXY / 5);
     }
 
     public DevilishCreature(String name, Square square, double bloodlust, int senseOfSmell) {

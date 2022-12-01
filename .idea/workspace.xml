@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/world/WorldMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/world/Correctors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/WorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/squares/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Area.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/squares/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/squares/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +95,9 @@
       <workItem from="1669873916913" duration="180000" />
       <workItem from="1669874157685" duration="11000" />
       <workItem from="1669876840281" duration="3857000" />
-      <workItem from="1669882612406" duration="1747000" />
+      <workItem from="1669882612406" duration="1963000" />
+      <workItem from="1669893249004" duration="4653000" />
+      <workItem from="1669907731064" duration="3595000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1669381171790</created>
@@ -108,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669381171790</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлен класс WorldMap&#10;Начата реализация симуляции&#10;Исправления в логистике классов-наследников Square и Point">
+      <created>1669884540241</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669884540241</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +121,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
+    <MESSAGE value="Добавлен класс WorldMap&#10;Начата реализация симуляции&#10;Исправления в логистике классов-наследников Square и Point" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен класс WorldMap&#10;Начата реализация симуляции&#10;Исправления в логистике классов-наследников Square и Point" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

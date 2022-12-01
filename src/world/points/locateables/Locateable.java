@@ -10,15 +10,8 @@ public abstract class Locateable extends Point {
         super(x, y, name);
         this.square = square;
     }
-    public void setX(int x) {
-        this.x = x;
-    }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public void setCoordinates(int x, int y) {
+    protected void setPosition(int x, int y) {
         this.x = x;
         this.y = y;
     }

@@ -1,5 +1,6 @@
 package world.points;
 
+import world.Correctors;
 import world.squares.Square;
 
 public class Point {
@@ -14,10 +15,9 @@ public class Point {
     public Point(int x, int y) {
         this(x, y, "");
     }
-
     public Point(int x, int y, String name) {
-        this.x = x;
-        this.y = y;
+        this.x = Correctors.correctInt(x, 0, maxXY);
+        this.y = Correctors.correctInt(y, 0, maxXY);
         this.name = name;
     }
 
@@ -49,5 +49,15 @@ public class Point {
     public static int randomY(Square square) {
         return (int) (Math.random() * (square.getTopRightPoint().getY() -
                 square.getBottomLeftPoint().getY() + 1) + square.getBottomLeftPoint().getY());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || obj.getClass() != getClass())
+            return false;
+        Point point = (Point) obj;
+        return point.x == this.x && point.y == this.y;
     }
 }

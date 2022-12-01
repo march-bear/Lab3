@@ -1,6 +1,7 @@
 package world;
 
 import world.points.Point;
+import world.squares.Area;
 import world.squares.Label;
 import world.squares.MainlandAntarctica;
 import world.squares.Square;
@@ -36,10 +37,19 @@ final class WorldMap {
     public void update() {
         clear();
         for (int i = 0; i < mainland.sizeOfAreas(); ++i) {
-            Square area = mainland.getArea(i);
+            Area area = mainland.getArea(i);
+            double audibility = area.getAudibility();
+            double visibility = area.getVisibility();
             for (int y = area.getBottomLeftPoint().getY(); y <= area.getTopRightPoint().getY(); ++y) {
                 for (int x = area.getBottomLeftPoint().getX(); x <= area.getTopRightPoint().getX(); ++x) {
-                    field.get(y).set(x, symbols.get("specialZone"));
+                    if (field.get(y).get(x) != symbols.get("hardZone")) {
+                        if (audibility - 0.4 < 0.00001 || visibility - 0.4 < 0.00001)
+                            field.get(y).set(x, symbols.get("hardZone"));
+                        else if (audibility - 0.8 < 0.00001 || visibility - 0.75 < 0.00001)
+                            field.get(y).set(x, symbols.get("middleZone"));
+                        else if (field.get(y).get(x) != symbols.get("middleZone"))
+                            field.get(y).set(x, symbols.get("normalZone"));
+                    }
                 }
             }
         }
@@ -93,7 +103,9 @@ final class WorldMap {
         symbols.put("people", 'H');
         symbols.put("monster", 'M');
         symbols.put("battle", 'B');
-        symbols.put("specialZone", '*');
+        symbols.put("normalZone", '+');
+        symbols.put("middleZone", '^');
+        symbols.put("hardZone", '%');
         symbols.put("label", '~');
         symbols.put("labelCenter", '?');
     }

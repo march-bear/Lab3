@@ -19,6 +19,8 @@ public class Main {
                 new Penguin("Тулупчик", world.finish)
         );
 
+        world.setMaxNumberOfMonsters(10);
+
         world.run();
     }
 }

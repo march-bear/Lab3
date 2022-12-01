@@ -24,8 +24,8 @@ public final class World {
     private World() {
         mainland = MainlandAntarctica.getInstance();
         finish = new Label("Пещерка пингвинов");
-        people = new GroupOfCreatures<Human>("Люди", mainland, CreatureType.HUMAN);
-        penguins = new GroupOfCreatures<Penguin>("Пингвины", finish, CreatureType.PENGUIN);
+        people = new GroupOfCreatures<Human>("Люди", mainland);
+        penguins = new GroupOfCreatures<Penguin>("Пингвины", finish);
         devilishCreatures = new ArrayList<DevilishCreature>();
     }
 
@@ -65,7 +65,6 @@ public final class World {
         return new Point(penguins.getX(), penguins.getY(), penguins.getName());
     }
 
-    // FIXME
     private void addMonster(String name, double bloodlust, int senseOfSmell) {
         devilishCreatures.add(new DevilishCreature(
                 name,
@@ -91,9 +90,9 @@ public final class World {
     }
 
     public void setMaxNumberOfMonsters(int number) {
-        if (number > 10)
-            this.maxNumberOfMonsters = 10;
-        else this.maxNumberOfMonsters = Math.max(number, 3);
+        if (number > Point.maxXY / 5 * 2)
+            this.maxNumberOfMonsters = Point.maxXY / 5 * 2;
+        else this.maxNumberOfMonsters = Math.max(number, Point.maxXY / 5);
     }
     public boolean run() {
         if (this.people.getNumberOfCreatures() == 0) {
@@ -104,9 +103,11 @@ public final class World {
             return false;
         }
 
-        mainland.addArea(new Area("Земля1", new Point(), new Point()));
-        mainland.addArea(new Area("Земля1", new Point(), new Point()));
-        mainland.addArea(new Area("Земля1", new Point(), new Point()));
+        mainland.addArea(new Area("Земля1", new Point(), new Point(), 0.9, 1.0));
+        mainland.addArea(new Area("Земля2", new Point(), new Point(), 0.9, 0.25));
+        mainland.addArea(new Area("Земля3", new Point(), new Point(), 0.75, 0.75));
+        mainland.addArea(new Area("Земля4", new Point(), new Point(), 1.0, 0.8));
+        mainland.addArea(new Area("Земля5", new Point(), new Point(), 0.4, 0.8));
 
         System.out.println("Подготовка к запуску симуляции...");
         for (int i = 0; i < maxNumberOfMonsters / 2 + 1; ++i) {
