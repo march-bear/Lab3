@@ -3,6 +3,8 @@ package world.squares;
 import world.points.Point;
 import world.squares.Square;
 
+import java.util.Objects;
+
 public class Area extends Square {
     protected final double audibility;
     protected final double visibility;
@@ -33,5 +35,28 @@ public class Area extends Square {
 
     public double getVisibility() {
         return visibility;
+    }
+
+    @Override
+    public String toString() {
+        return "область " + name + "\n" +
+                "Координаты нижней левой вершины: (" + bottomLeftPoint.getX() + ", " + bottomLeftPoint.getY() + ")\n" +
+                "Координаты верхней правой вершины: (" + topRightPoint.getX() + ", " + topRightPoint.getY() + ")\n" +
+                "Видимость: " + (int) (visibility * 100) + "%\n" +
+                "Слышимость: " + (int) (audibility * 100) + "%";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            Area area = (Area) obj;
+            return area.audibility == this.audibility && area.visibility == this.visibility;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, bottomLeftPoint, topRightPoint, audibility, visibility);
     }
 }

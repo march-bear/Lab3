@@ -1,11 +1,13 @@
 package world.points.locateables;
 
-import world.points.locateables.creatures.CreatureType;
+import world.Correctors;
+import world.points.locateables.creatures.Creature;
+import world.points.locateables.creatures.IMove;
 import world.squares.Square;
 
 import java.util.ArrayList;
 
-public final class GroupOfCreatures<T> extends Locateable {
+public final class GroupOfCreatures<T> extends Locateable implements IMove {
     final private ArrayList<T> creatures;
 
     public GroupOfCreatures(String name, Square square) {
@@ -21,15 +23,39 @@ public final class GroupOfCreatures<T> extends Locateable {
         creatures.add(creature);
     }
 
-    public void removeCreature(T creature) {
-        creatures.remove(creature);
-    }
-
     public int getNumberOfCreatures() {
         return creatures.size();
     }
 
     public T getCreature(int index) {
         return creatures.get(index);
+    }
+
+    @Override
+    public void move() {
+        int speed = ((Creature) creatures.get(0)).getSpeed();
+        int deltaX = (int) (Math.random() * (2 * speed + 1) - speed);
+        int deltaY = (speed - Math.abs(deltaX)) * (int) Math.pow(-1, Math.random() * 1 + 1);
+
+        if (this.x + deltaX != Correctors.correctInt(this.x + deltaX,
+                square.getBottomLeftPoint().getX(), square.getTopRightPoint().getX()))
+            deltaX = -deltaX;
+
+        if (this.x + deltaY != Correctors.correctInt(this.x + deltaY,
+                square.getBottomLeftPoint().getY(), square.getTopRightPoint().getY()))
+            deltaY = -deltaY;
+
+        this.setPosition(this.x + deltaX, this.y + deltaY);
+    }
+
+    @Override
+    public boolean move(int deltaX, int deltaY) {
+        boolean flag = this.x + deltaX == Correctors.correctInt(this.x + deltaX,
+                square.getBottomLeftPoint().getX(), square.getTopRightPoint().getX()) ||
+                this.x + deltaY == Correctors.correctInt(this.x + deltaY,
+                        square.getBottomLeftPoint().getY(), square.getTopRightPoint().getY());
+
+        setPosition(this.x + deltaX, this.y + deltaY);
+        return flag;
     }
 }

@@ -3,6 +3,8 @@ package world.points;
 import world.Correctors;
 import world.squares.Square;
 
+import java.util.Objects;
+
 public class Point {
     protected int x;
     protected int y;
@@ -59,5 +61,15 @@ public class Point {
             return false;
         Point point = (Point) obj;
         return point.x == this.x && point.y == this.y;
+    }
+
+    @Override
+    public String toString() {
+        return "Точка " + name + ": (" + x + ", " + y + ")";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.x, this.y);
     }
 }

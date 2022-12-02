@@ -4,7 +4,6 @@ import world.points.Point;
 import world.squares.Area;
 import world.squares.Label;
 import world.squares.MainlandAntarctica;
-import world.squares.Square;
 
 import java.util.ArrayList;
 import java.util.HashMap;

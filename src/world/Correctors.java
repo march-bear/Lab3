@@ -16,6 +16,6 @@ public final class Correctors {
             num = max;
         else if (num - min < 0.00001)
             num = min;
-        return min;
+        return num;
     }
 }

@@ -8,13 +8,14 @@ import world.points.locateables.creatures.Creature;
 import world.squares.Label;
 import world.squares.Square;
 
+import java.util.Objects;
+
 public class DevilishCreature extends ActiveCreature {
-    final double bloodlust;
-    final int senseOfSmell;
+    public final double bloodlust;
+    public final int senseOfSmell;
 
     public DevilishCreature(String name, Square square, int x, int y, double bloodlust, int senseOfSmell) {
         super(45, name, square, (int) (Math.random() * 2 + 1), x, y, 1);
-
         this.bloodlust = Correctors.correctDouble(bloodlust, 0.0, 1.0);
         this.senseOfSmell = Correctors.correctInt(senseOfSmell, 0, maxXY / 5);
     }
@@ -23,37 +24,43 @@ public class DevilishCreature extends ActiveCreature {
         this(name, square, randomX(square), randomY(square), bloodlust, senseOfSmell);
     }
 
-    public DevilishCreature(String name, Square square) {
-        this(name, square, 0.5, 1);
-    }
-
-    @Override
-    public Sound makeSound() {
-        return new Sound(x, y, "Крик дьявольской твари", SoundType.MONSTER_SCREAM, 6);
-    }
-
     @Override
     public void move() {
 
     }
 
     @Override
-    public void goTo(Label target) {
-
-    }
-
-    @Override
-    public void goTo(Creature target) {
-
-    }
-
-    @Override
     public void attackTarget(ActiveCreature target) {
-        target.loseHP(this.attackDamage);
+        target.loseHP(this.getAttackDamage());
     }
 
     @Override
     public void useSpecialAttack(ActiveCreature target) {
-        target.loseHP(this.attackDamage * 2);
+        target.loseHP(this.getAttackDamage() * 2);
+    }
+
+    @Override
+    public String toString() {
+        return "тварь " + name + "\n" +
+                "Координаты: (" + x + ", " + y + ")\n" +
+                "Локация: " + square.getName() + "\n" +
+                "Скорость передвижения: " + speed + "\n" +
+                "Кровожадность: " + (int) (bloodlust * 100) + "%\n" +
+                "Нюх: " + senseOfSmell + "\n" +
+                "HP: " + hp + "\n" +
+                "Состояние: " + condition.getName();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (super.equals(obj))
+            return ((DevilishCreature) obj).bloodlust == this.bloodlust &&
+                    ((DevilishCreature) obj).senseOfSmell == this.senseOfSmell;
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, name, square, speed, attackDamage, bloodlust, senseOfSmell);
     }
 }

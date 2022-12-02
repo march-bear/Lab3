@@ -19,11 +19,6 @@ public class Penguin extends Creature {
     }
 
     @Override
-    public Sound makeSound() {
-        return new Sound(x, y, "Крик пингвина " + name, SoundType.PENGUIN_SCREAM, (int) ((Math.random() * 2) + 2));
-    }
-
-    @Override
     public void move() {
 
     }

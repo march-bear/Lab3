@@ -20,7 +20,7 @@ public class Main {
         );
 
         world.setMaxNumberOfMonsters(10);
-
+        world.mainland.setNumberOfAreas(4);
         world.run();
     }
 }

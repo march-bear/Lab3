@@ -2,8 +2,9 @@ package world;
 
 import world.points.Point;
 import world.points.locateables.GroupOfCreatures;
+import world.points.locateables.Sound;
+import world.points.locateables.SoundType;
 import world.points.locateables.creatures.*;
-import world.points.locateables.creatures.active.ActiveCreature;
 import world.points.locateables.creatures.active.DevilishCreature;
 import world.points.locateables.creatures.active.Human;
 import world.squares.Area;
@@ -65,11 +66,13 @@ public final class World {
         return new Point(penguins.getX(), penguins.getY(), penguins.getName());
     }
 
-    private void addMonster(String name, double bloodlust, int senseOfSmell) {
-        devilishCreatures.add(new DevilishCreature(
-                name,
-                mainland.getArea((int) (Math.random() * (mainland.sizeOfAreas() + 1))), bloodlust, senseOfSmell)
-        );
+    private boolean addMonster(String name, double bloodlust, int senseOfSmell) {
+        if (getNumberOfMonster() < maxNumberOfMonsters) {
+            devilishCreatures.add(new DevilishCreature(name,
+                    mainland.getArea((int) (Math.random() * (mainland.sizeOfAreas() + 1))), bloodlust, senseOfSmell));
+            return true;
+        }
+        return false;
     }
 
     public int getNumberOfMonster() {
@@ -81,19 +84,27 @@ public final class World {
         return new Point(monster.getX(), monster.getY(), monster.getName());
     }
 
-    public void startBattle(ActiveCreature creature1, ActiveCreature creature2) {
-
+    private boolean startBattle(Human human, DevilishCreature monster) {
+        while (human.getHp() != 0 && monster.getHp() != 0 && monster.getCondition() != Condition.CONFUSED) {
+            human.attackTarget(monster);
+            monster.attackTarget(human);
+        }
+        return human.getHp() != 0;
     }
 
-    public void startBattle(DevilishCreature devilishCreature, GroupOfCreatures<Human> people) {
-
+    private boolean startBattle(DevilishCreature monster, GroupOfCreatures<Human> people) {
+        for (int i = 0; i < people.getNumberOfCreatures(); ++i) {
+            Human curr_human = people.getCreature(i);
+            if (startBattle(curr_human, monster))
+                break;
+        }
+        return monster.getHp() == 0;
     }
 
     public void setMaxNumberOfMonsters(int number) {
-        if (number > Point.maxXY / 5 * 2)
-            this.maxNumberOfMonsters = Point.maxXY / 5 * 2;
-        else this.maxNumberOfMonsters = Math.max(number, Point.maxXY / 5);
+        maxNumberOfMonsters = Correctors.correctInt(number, Point.maxXY / 5, Point.maxXY / 5 * 2);
     }
+
     public boolean run() {
         if (this.people.getNumberOfCreatures() == 0) {
             System.out.println("Симуляция не может быть запущена: группа людей не определена");
@@ -102,18 +113,22 @@ public final class World {
             System.out.println("Симуляция не может быть запущена: группа пингвинов не определена.");
             return false;
         }
-
-        mainland.addArea(new Area("Земля1", new Point(), new Point(), 0.9, 1.0));
-        mainland.addArea(new Area("Земля2", new Point(), new Point(), 0.9, 0.25));
-        mainland.addArea(new Area("Земля3", new Point(), new Point(), 0.75, 0.75));
-        mainland.addArea(new Area("Земля4", new Point(), new Point(), 1.0, 0.8));
-        mainland.addArea(new Area("Земля5", new Point(), new Point(), 0.4, 0.8));
-
         System.out.println("Подготовка к запуску симуляции...");
-        for (int i = 0; i < maxNumberOfMonsters / 2 + 1; ++i) {
-            addMonster("Монстр" + (i + 1), Math.random() * 9 + 1, (int) (Math.random() * 3 + 3));
-            System.out.println("Добавлена тварь " + devilishCreatures.get(i).getName());
+
+        while (mainland.addArea(new Area("Земля" + (mainland.sizeOfAreas() + 1), new Point(), new Point(),
+                ((int) (Math.random() * 101)) / 100.0, ((int) (Math.random() * 101)) / 10.0))) {
+            System.out.println("Определена " + mainland.getArea(mainland.sizeOfAreas() - 1) + "\n");
         }
+
+        while (addMonster("Монстр" + (getNumberOfMonster() + 1),
+                ((int) (Math.random() * 101)) / 100.0, (int) (Math.random() * 3 + 3))) {
+            System.out.println("Добавлена " + devilishCreatures.get(getNumberOfMonster() - 1) + "\n");
+        }
+
+        IMakeSound penguinScream = (int x, int y) ->
+                new Sound(x, y, "визг пингвина", SoundType.PENGUIN_SCREAM, (int) ((Math.random() * 2) + 2));
+        IMakeSound devilishScream = (int x, int y) ->
+                new Sound(x, y, "крик страшной твари", SoundType.MONSTER_SCREAM, (int) ((Math.random() * 3) + 4));
 
         WorldMap map = new WorldMap(
                 this,

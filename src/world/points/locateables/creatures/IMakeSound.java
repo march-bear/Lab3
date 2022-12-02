@@ -4,5 +4,5 @@ import world.points.locateables.Sound;
 
 @FunctionalInterface
 public interface IMakeSound {
-    Sound makeSound();
+    Sound makeSound(int x, int y);
 }

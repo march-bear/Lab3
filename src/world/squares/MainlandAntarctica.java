@@ -1,5 +1,6 @@
 package world.squares;
 
+import world.Correctors;
 import world.points.locateables.Sound;
 import world.points.Point;
 
@@ -9,6 +10,7 @@ public class MainlandAntarctica extends Area {
     private static MainlandAntarctica instance;
     private final ArrayList<Area> areas;
     private final ArrayList<Sound> sounds;
+    private int numberOfAreas = 5;
 
     private MainlandAntarctica() {
         super("Антарктида", new Point(0, 0), new Point(Point.maxXY, Point.maxXY));
@@ -28,8 +30,12 @@ public class MainlandAntarctica extends Area {
         return areas.get(index);
     }
 
-    public void addArea(Area area) {
-        areas.add(area);
+    public boolean addArea(Area area) {
+        if (sizeOfAreas() < numberOfAreas) {
+            areas.add(area);
+            return true;
+        }
+        return false;
     }
 
     public int sizeOfAreas() {
@@ -51,5 +57,9 @@ public class MainlandAntarctica extends Area {
             }
         }
         return instance;
+    }
+
+    public void setNumberOfAreas(int number) {
+        numberOfAreas = Correctors.correctInt(number, Point.maxXY / 10, Point.maxXY / 5);
     }
 }

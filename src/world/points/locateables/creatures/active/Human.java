@@ -15,22 +15,7 @@ public final class Human extends ActiveCreature {
     }
 
     @Override
-    public Sound makeSound() {
-        return new Sound(this.x, this.y, "Речь " + this.name, SoundType.SPEECH, 3);
-    }
-
-    @Override
     public void move() {
-
-    }
-
-    @Override
-    public void goTo(Label target) {
-
-    }
-
-    @Override
-    public void goTo(Creature target) {
 
     }
 
@@ -42,5 +27,15 @@ public final class Human extends ActiveCreature {
     @Override
     public void useSpecialAttack(ActiveCreature target) {
 
+    }
+
+    @Override
+    public String toString() {
+        return "человек " + name + "\n" +
+                "Координаты: (" + x + ", " + y + ")\n" +
+                "Локация: " + square.getName() + "\n" +
+                "Скорость передвижения: " + speed + "\n" +
+                "HP: " + hp + "\n" +
+                "Состояние: " + condition.getName();
     }
 }

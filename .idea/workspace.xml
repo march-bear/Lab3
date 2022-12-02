@@ -5,15 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/world/Correctors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Correctors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Correctors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/WorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/CreatureType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMakeSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMakeSound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/Penguin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Penguin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/ActiveCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/ActiveCreature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Area.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/squares/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +58,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ivan/IdeaProjects/Lab6Inf&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ivan/IdeaProjects/Lab3Prog&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -97,7 +107,17 @@
       <workItem from="1669876840281" duration="3857000" />
       <workItem from="1669882612406" duration="1963000" />
       <workItem from="1669893249004" duration="4653000" />
-      <workItem from="1669907731064" duration="3595000" />
+      <workItem from="1669907731064" duration="7159000" />
+      <workItem from="1669920521052" duration="17000" />
+      <workItem from="1669966151353" duration="8826000" />
+      <workItem from="1669983077539" duration="1046000" />
+      <workItem from="1669984167234" duration="285000" />
+      <workItem from="1669985095889" duration="169000" />
+      <workItem from="1669986811695" duration="19000" />
+      <workItem from="1669986872948" duration="715000" />
+      <workItem from="1669993435139" duration="101000" />
+      <workItem from="1669996981670" duration="7100000" />
+      <workItem from="1670007357597" duration="5831000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1669381171790</created>
@@ -113,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669884540241</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Полностью реализован класс WorldMap&#10;Добавлен класс Correctors для коррекции значений под заданный диапазон">
+      <created>1669914365915</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669914365915</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +149,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
     <MESSAGE value="Добавлен класс WorldMap&#10;Начата реализация симуляции&#10;Исправления в логистике классов-наследников Square и Point" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен класс WorldMap&#10;Начата реализация симуляции&#10;Исправления в логистике классов-наследников Square и Point" />
+    <MESSAGE value="Полностью реализован класс WorldMap&#10;Добавлен класс Correctors для коррекции значений под заданный диапазон" />
+    <option name="LAST_COMMIT_MESSAGE" value="Полностью реализован класс WorldMap&#10;Добавлен класс Correctors для коррекции значений под заданный диапазон" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
