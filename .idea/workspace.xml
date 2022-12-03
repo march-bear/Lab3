@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/GroupOfCreatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/Locateable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/Sound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/IMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/Penguin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/Penguin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/ActiveCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/ActiveCreature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/DevilishCreature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/locateables/creatures/active/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/squares/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/squares/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Square.java" afterDir="false" />
-    </list>
+    <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +97,7 @@
       <workItem from="1669993435139" duration="101000" />
       <workItem from="1669996981670" duration="7100000" />
       <workItem from="1670007357597" duration="6757000" />
-      <workItem from="1670037469100" duration="11967000" />
+      <workItem from="1670037469100" duration="12267000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1669381171790</created>
@@ -144,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670013848445</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Скорректированы функции движения&#10;Создан черновой вариант метода run() класса World&#10;Мелкие исправления">
+      <created>1670049694166</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670049694166</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +145,8 @@
     <MESSAGE value="Добавлен класс WorldMap&#10;Начата реализация симуляции&#10;Исправления в логистике классов-наследников Square и Point" />
     <MESSAGE value="Полностью реализован класс WorldMap&#10;Добавлен класс Correctors для коррекции значений под заданный диапазон" />
     <MESSAGE value="Реализована инициализация параметров мира&#10;Переопределены функции equals(Object obj), hashCode(), toString() для некоторых классов&#10;Изменено назначения интерфейса IMakeSound" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализована инициализация параметров мира&#10;Переопределены функции equals(Object obj), hashCode(), toString() для некоторых классов&#10;Изменено назначения интерфейса IMakeSound" />
+    <MESSAGE value="Скорректированы функции движения&#10;Создан черновой вариант метода run() класса World&#10;Мелкие исправления" />
+    <option name="LAST_COMMIT_MESSAGE" value="Скорректированы функции движения&#10;Создан черновой вариант метода run() класса World&#10;Мелкие исправления" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
