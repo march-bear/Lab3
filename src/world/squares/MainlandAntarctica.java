@@ -46,6 +46,14 @@ public class MainlandAntarctica extends Area {
         sounds.add(sound);
     }
 
+    public Sound getSound(int index) {
+        return sounds.get(index);
+    }
+
+    public int getNumberOfSounds() {
+        return sounds.size();
+    }
+
     public void clearSounds() {
         sounds.clear();
     }

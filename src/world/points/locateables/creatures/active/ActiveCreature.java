@@ -1,27 +1,20 @@
 package world.points.locateables.creatures.active;
 
-import world.points.locateables.Locateable;
+import world.Correctors;
+import world.points.Point;
 import world.points.locateables.creatures.Condition;
 import world.points.locateables.creatures.Creature;
-import world.squares.Label;
-import world.squares.Square;
+import world.points.locateables.creatures.IMove;
+import world.squares.Area;
 
 import java.util.Objects;
 
-public abstract class ActiveCreature extends Creature {
+public abstract class ActiveCreature extends Creature implements IMove {
     protected int hp;
     protected final int attackDamage;
     protected Condition condition = Condition.HEALTHY;
 
-    ActiveCreature(int hp, String name, Square square) {
-        this(hp, name, square, hp / 5 + ((hp < 5) ? 1 : 0));
-    }
-
-    ActiveCreature(int hp, String name, Square square, int attackDamage) {
-        this(hp, name, square, attackDamage, randomXY(), randomXY(), 1);
-    }
-
-    ActiveCreature(int hp, String name, Square square, int attackDamage, int x, int y, int speed) {
+    ActiveCreature(int hp, String name, Area square, int attackDamage, int x, int y, int speed) {
         super(x, y, name, square, speed);
         this.hp = hp;
         this.attackDamage = attackDamage;
@@ -43,20 +36,16 @@ public abstract class ActiveCreature extends Creature {
         this.condition = condition;
     }
 
-    private boolean goTo(int x, int y) {
-        int deltaX = (Math.abs(x - this.x) >= speed ? speed : 0) * ((x> this.x) ? 1 : -1);
-        this.x += deltaX;
-        int deltaY = (Math.abs(y - this.y) >= speed - Math.abs(deltaX) ? speed - Math.abs(deltaX) : 0) *
-                ((y > this.y) ? 1 : -1);
-        this.y += deltaY;
+    public boolean goTo(Point target) {
+        int x = target.getX();
+        int y = target.getY();
+        int deltaX = (Math.min(Math.abs(x - this.x), speed)) * ((x > this.x) ? 1 : -1);
+        this.x = Correctors.correctInt(this.x + deltaX, square.getBottomLeftPoint().getX(),
+                square.getTopRightPoint().getX());
+        int deltaY = (Math.min(Math.abs(y - this.y), speed - Math.abs(deltaX))) * ((y > this.y) ? 1 : -1);
+        this.y = Correctors.correctInt(this.y + deltaY, square.getBottomLeftPoint().getY(),
+                square.getTopRightPoint().getY());
         return this.x == x && this.y == y;
-    }
-    public boolean goTo(Label target) {
-        return goTo(target.getCenterPoint().getX(), target.getCenterPoint().getY());
-    }
-
-    public boolean goTo(Locateable target) {
-        return goTo(target.getX(), target.getY());
     }
 
     public abstract void attackTarget(ActiveCreature target);
@@ -65,10 +54,14 @@ public abstract class ActiveCreature extends Creature {
 
     public void loseHP(int damage) {
         if (damage > 0) {
-            if (damage >= this.hp)
+            if (damage >= this.hp) {
+                System.out.println(name + " теряет все здоровье!");
                 this.hp = 0;
-            else
+            }
+            else {
+                System.out.println(name + " теряет " + damage + " очков здоровья.");
                 this.hp -= damage;
+            }
         }
     }
 

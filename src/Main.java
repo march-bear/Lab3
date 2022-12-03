@@ -19,8 +19,17 @@ public class Main {
                 new Penguin("Тулупчик", world.finish)
         );
 
-        world.setMaxNumberOfMonsters(10);
+        world.setMaxNumberOfMonsters(3);
         world.mainland.setNumberOfAreas(4);
-        world.run();
+        if (world.run()) {
+            System.out.println("Пойдя на звуки, люди вошли в арку, которую, видно,\n" +
+                    "только недавно расчистили от завалов. Оставив дневной свет позади,\n" +
+                    "они возобновили нашу возню с клочками, тем более что позаимствовали,\n" +
+                    "хоть и не без брезгливости, изрядную толику бумаги из тюка на санях.");
+        } else {
+            System.out.println("Люди не достигли своей цели и были убиты фантомными монстрами.");
+        }
+        System.out.println("Симуляция остановлена...");
+
     }
 }

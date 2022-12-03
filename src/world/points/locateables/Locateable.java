@@ -1,15 +1,16 @@
 package world.points.locateables;
 
 import world.Correctors;
+import world.squares.Area;
 import world.squares.Square;
 import world.points.Point;
 
 import java.util.Objects;
 
 public abstract class Locateable extends Point {
-    protected final Square square;
+    protected final Area square;
 
-    protected Locateable(int x, int y, String name, Square square) {
+    protected Locateable(int x, int y, String name, Area square) {
         super(x, y, name);
         this.square = square;
     }

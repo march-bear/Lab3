@@ -87,18 +87,28 @@ public final class World {
     private boolean startBattle(Human human, DevilishCreature monster) {
         while (human.getHp() != 0 && monster.getHp() != 0 && monster.getCondition() != Condition.CONFUSED) {
             human.attackTarget(monster);
+            if (human.getHp() == 0) {
+                human.setCondition(Condition.DISABLED);
+                return false;
+            }
             monster.attackTarget(human);
+            if (monster.getHp() == 0) {
+                monster.setCondition(Condition.DISABLED);
+                return true;
+            }
         }
+
         return human.getHp() != 0;
     }
 
     private boolean startBattle(DevilishCreature monster, GroupOfCreatures<Human> people) {
+        System.out.println("ДА БУДЕТ БАААААААААТТЛ");
         for (int i = 0; i < people.getNumberOfCreatures(); ++i) {
             Human curr_human = people.getCreature(i);
             if (startBattle(curr_human, monster))
                 break;
         }
-        return monster.getHp() == 0;
+        return monster.getCondition() != Condition.CONFUSED && monster.getHp() != 0;
     }
 
     public void setMaxNumberOfMonsters(int number) {
@@ -136,6 +146,63 @@ public final class World {
                 mainland.getTopRightPoint().getX() - mainland.getBottomLeftPoint().getX() + 1
         );
         map.print();
-        return true;
+
+        boolean peopleReachedTheTarget = false;
+        mainLoop: while (true) {
+            for (DevilishCreature curr_monster : devilishCreatures) {
+                if (curr_monster.getCondition() == Condition.CONFUSED && Math.random() > 0.8)
+                    curr_monster.setCondition(Condition.HEALTHY);
+                if (curr_monster.getCondition() == Condition.HEALTHY) {
+                    int deltaX = Math.abs(people.getX() - curr_monster.getX());
+                    int deltaY = Math.abs(people.getY() - curr_monster.getY());
+                    if (deltaX == 0 && deltaY == 0) {
+                        if (startBattle(curr_monster, people))
+                            break mainLoop;
+
+                    }
+                    else if ((deltaX <= 1 && deltaY <= 1) || deltaX * deltaX + deltaY * deltaY <=
+                            curr_monster.senseOfSmell * curr_monster.senseOfSmell) {
+                        curr_monster.goTo(people);
+                    } else {
+                        curr_monster.move();
+                    }
+                }
+                if (Math.random() > 0.9)
+                    mainland.addSound(devilishScream.makeSound(curr_monster.getX(), curr_monster.getY()));
+            }
+
+            penguins.move();
+            if (Math.random() > 0.7)
+                mainland.addSound(penguinScream.makeSound(penguins.getX(), penguins.getY()));
+
+            if (people.getCreature(0).getMainTarget() != null &&
+                    people.goTo(people.getCreature(0).getMainTarget()) || finish.isIncludedPoint(people)) {
+                peopleReachedTheTarget = true;
+                break;
+            } else {
+                for (int i = 0; i < mainland.getNumberOfSounds(); ++i) {
+                    Sound curr_sound = mainland.getSound(i);
+                    if (curr_sound.heard(people)) {
+                        if (curr_sound.getType() == SoundType.PENGUIN_SCREAM) {
+                            people.getCreature(0).setMainTarget(finish.getCenterPoint());
+                            System.out.println("До членов группы " + people.getName() +
+                                    " доносятся дребезжащие крики какой-то ужасной твари. Походу, это пингвины. " +
+                                    "Определен источник звука");
+                            break;
+                        }
+                        else if (curr_sound.getType() == SoundType.MONSTER_SCREAM)
+                            System.out.println("До членов группы " + people.getName() + " доносятся страшные звуки");
+                    }
+                }
+                if (people.getCreature(0).getMainTarget() == null)
+                    people.move();
+            }
+            map.update();
+            map.print();
+            System.out.println();
+            mainland.clearSounds();
+        }
+
+        return peopleReachedTheTarget;
     }
 }

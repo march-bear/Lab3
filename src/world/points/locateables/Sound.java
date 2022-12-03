@@ -21,7 +21,8 @@ public final class Sound extends Locateable {
         return type;
     }
 
-    boolean heard(Locateable l) {
-        return Math.pow(l.getX() - this.x, 2) + Math.pow(l.getY() - this.y, 2) <= Math.pow(volume, 2);
+    public boolean heard(Locateable l) {
+        return Math.pow(l.getX() - this.x, 2) + Math.pow(l.getY() - this.y, 2) <=
+                Math.pow(volume * l.square.getAudibility(), 2);
     }
 }
