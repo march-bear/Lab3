@@ -1,5 +1,6 @@
 package world.squares;
 
+import world.World;
 import world.points.Point;
 import world.squares.Square;
 

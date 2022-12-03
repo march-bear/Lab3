@@ -79,7 +79,7 @@ public final class World {
         return devilishCreatures.size();
     }
 
-    public Point getMonster(int index) {
+    Point getMonster(int index) {
         Point monster = devilishCreatures.get(index);
         return new Point(monster.getX(), monster.getY(), monster.getName());
     }
@@ -87,14 +87,14 @@ public final class World {
     private boolean startBattle(Human human, DevilishCreature monster) {
         while (human.getHp() != 0 && monster.getHp() != 0 && monster.getCondition() != Condition.CONFUSED) {
             human.attackTarget(monster);
-            if (human.getHp() == 0) {
-                human.setCondition(Condition.DISABLED);
-                return false;
-            }
-            monster.attackTarget(human);
             if (monster.getHp() == 0) {
                 monster.setCondition(Condition.DISABLED);
                 return true;
+            }
+            monster.attackTarget(human);
+            if (human.getHp() == 0) {
+                human.setCondition(Condition.DISABLED);
+                return false;
             }
         }
 
@@ -105,8 +105,10 @@ public final class World {
         System.out.println("ДА БУДЕТ БАААААААААТТЛ");
         for (int i = 0; i < people.getNumberOfCreatures(); ++i) {
             Human curr_human = people.getCreature(i);
-            if (startBattle(curr_human, monster))
+            if (startBattle(curr_human, monster)) {
+                System.out.println("Победа людей\n");
                 break;
+            }
         }
         return monster.getCondition() != Condition.CONFUSED && monster.getHp() != 0;
     }
@@ -149,16 +151,19 @@ public final class World {
 
         boolean peopleReachedTheTarget = false;
         mainLoop: while (true) {
-            for (DevilishCreature curr_monster : devilishCreatures) {
+            for (int i = 0; i < getNumberOfMonster(); ++i) {
+                DevilishCreature curr_monster = devilishCreatures.get(i);
                 if (curr_monster.getCondition() == Condition.CONFUSED && Math.random() > 0.8)
                     curr_monster.setCondition(Condition.HEALTHY);
                 if (curr_monster.getCondition() == Condition.HEALTHY) {
                     int deltaX = Math.abs(people.getX() - curr_monster.getX());
                     int deltaY = Math.abs(people.getY() - curr_monster.getY());
                     if (deltaX == 0 && deltaY == 0) {
-                        if (startBattle(curr_monster, people))
+                        if (startBattle(curr_monster, people)) {
+                            System.out.println("Победа твари\n");
                             break mainLoop;
-
+                        }
+                        devilishCreatures.set(i, null);
                     }
                     else if ((deltaX <= 1 && deltaY <= 1) || deltaX * deltaX + deltaY * deltaY <=
                             curr_monster.senseOfSmell * curr_monster.senseOfSmell) {
@@ -197,6 +202,15 @@ public final class World {
                 if (people.getCreature(0).getMainTarget() == null)
                     people.move();
             }
+
+            int i = 0;
+            while (i < devilishCreatures.size()) {
+                if (devilishCreatures.get(i) == null)
+                    devilishCreatures.remove(i);
+                else
+                    ++i;
+            }
+
             map.update();
             map.print();
             System.out.println();

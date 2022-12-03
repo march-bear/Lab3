@@ -9,7 +9,7 @@ public class Point {
     protected int x;
     protected int y;
     protected String name;
-    public final static int maxXY = 10;
+    public final static int maxXY = 20;
     public Point() {
         this(randomXY(), randomXY());
     }

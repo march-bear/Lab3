@@ -5,6 +5,7 @@ import world.points.locateables.Sound;
 import world.points.Point;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainlandAntarctica extends Area {
     private static MainlandAntarctica instance;
@@ -69,5 +70,21 @@ public class MainlandAntarctica extends Area {
 
     public void setNumberOfAreas(int number) {
         numberOfAreas = Correctors.correctInt(number, Point.maxXY / 10, Point.maxXY / 5);
+    }
+
+    @Override
+    public String toString() {
+        return "материк " + name + "\n" +
+                "Количество областей: " + numberOfAreas;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return getInstance() == obj;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(instance);
     }
 }

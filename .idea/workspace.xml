@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="" />
+    <list default="true" id="0fbc06c3-34d4-4197-b536-ec36a7a6bcfb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/points/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/points/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Area.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/squares/MainlandAntarctica.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,19 +40,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ivan/IdeaProjects/Lab3Prog&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Ivan/IdeaProjects/Lab3Prog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -97,7 +105,8 @@
       <workItem from="1669993435139" duration="101000" />
       <workItem from="1669996981670" duration="7100000" />
       <workItem from="1670007357597" duration="6757000" />
-      <workItem from="1670037469100" duration="12267000" />
+      <workItem from="1670037469100" duration="13063000" />
+      <workItem from="1670054660329" duration="5212000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1669381171790</created>
@@ -134,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670049694166</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлен файл манифеста">
+      <created>1670049971599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670049971599</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +162,8 @@
     <MESSAGE value="Полностью реализован класс WorldMap&#10;Добавлен класс Correctors для коррекции значений под заданный диапазон" />
     <MESSAGE value="Реализована инициализация параметров мира&#10;Переопределены функции equals(Object obj), hashCode(), toString() для некоторых классов&#10;Изменено назначения интерфейса IMakeSound" />
     <MESSAGE value="Скорректированы функции движения&#10;Создан черновой вариант метода run() класса World&#10;Мелкие исправления" />
-    <option name="LAST_COMMIT_MESSAGE" value="Скорректированы функции движения&#10;Создан черновой вариант метода run() класса World&#10;Мелкие исправления" />
+    <MESSAGE value="Добавлен файл манифеста" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен файл манифеста" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
